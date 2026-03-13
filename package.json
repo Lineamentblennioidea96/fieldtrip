@@ -1,6 +1,6 @@
 {
-  "name": "fieldtrip",
-  "version": "1.0.0",
+  "name": "@eventcatalog/fieldtrip",
+  "version": "0.0.1",
   "description": "Search across OpenAPI, AsyncAPI, Protobuf, Avro, and JSON Schema files",
   "bin": {
     "fieldtrip": "./bin/cli.js"
@@ -13,7 +13,10 @@
     "build": "npm run build:ui && npm run build:cli",
     "build:ui": "vite build",
     "build:cli": "tsc -p tsconfig.cli.json",
-    "dev": "tsx src/cli/index.ts --dir ./test-schemas"
+    "dev": "tsx src/cli/index.ts --dir ./test-schemas",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && changeset publish"
   },
   "keywords": [
     "schema",
@@ -38,6 +41,8 @@
     "yaml": "^2.4.0"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.6.0",
+    "@changesets/cli": "^2.30.0",
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.0",
     "tsx": "^4.7.0",
