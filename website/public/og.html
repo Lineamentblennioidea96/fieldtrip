@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    background: #0b0d11;
+    font-family: 'Inter', -apple-system, sans-serif;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 70%);
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    flex: 1;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .brand svg { width: 40px; height: 40px; }
+  .brand span {
+    font-size: 18px;
+    font-weight: 600;
+    color: #8b8fa3;
+  }
+  .brand .by { color: #4a4f63; font-weight: 400; }
+  h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #e8eaed;
+    max-width: 600px;
+  }
+  h1 .highlight {
+    background: linear-gradient(135deg, #3b82f6, #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .sub {
+    font-size: 18px;
+    color: #8b8fa3;
+    margin-top: 20px;
+    max-width: 480px;
+    line-height: 1.6;
+  }
+  .chips {
+    display: flex;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  .chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+    font-size: 12px;
+    color: #8b8fa3;
+    font-weight: 500;
+  }
+  .chip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+  .preview {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 580px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  }
+  .preview img { width: 100%; display: block; }
+</style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="content">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#3b82f6"/>
+        <path d="M10 12h12M10 16h8M10 20h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>FieldTrip <span class="by">by EventCatalog</span></span>
+    </div>
+    <h1>Search every field across <span class="highlight">all your schemas.</span></h1>
+    <p class="sub">OpenAPI, AsyncAPI, Protobuf, Avro, and JSON Schema — indexed and visualized instantly.</p>
+    <div class="chips">
+      <div class="chip"><div class="chip-dot" style="background:#3b82f6"></div>OpenAPI</div>
+      <div class="chip"><div class="chip-dot" style="background:#8b5cf6"></div>AsyncAPI</div>
+      <div class="chip"><div class="chip-dot" style="background:#10b981"></div>Protobuf</div>
+      <div class="chip"><div class="chip-dot" style="background:#f59e0b"></div>Avro</div>
+      <div class="chip"><div class="chip-dot" style="background:#6366f1"></div>JSON Schema</div>
+    </div>
+  </div>
+  <div class="preview">
+    <img src="images/matrix.png" alt="" />
+  </div>
+</body>
+</html>

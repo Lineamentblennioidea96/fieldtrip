@@ -1,0 +1,232 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/landing.css';
+---
+
+<Layout title="FieldTrip — Search every field across your schemas">
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-left">
+      <a href="/" class="nav-brand">
+        <svg viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="#3b82f6"/>
+          <path d="M10 12h12M10 16h8M10 20h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        FieldTrip
+        <span class="nav-by">by EventCatalog</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#schemas">Schemas</a>
+      <a href="#how">How It Works</a>
+      <a href="https://github.com/eventcatalog/fieldtrip" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>
+      Search every field.<br/>
+      Across <span class="highlight">all your schemas.</span>
+    </h1>
+    <p class="hero-sub">
+      Point FieldTrip at a directory. It finds your OpenAPI, AsyncAPI, Protobuf, Avro, and JSON Schema files, indexes every property, and lets you explore them instantly.
+    </p>
+    <div class="install-block" id="hero-install">
+      <span>$</span>
+      <code>npx @eventcatalog/fieldtrip --dir ./schemas</code>
+      <button class="copy-btn" aria-label="Copy to clipboard" data-copy="npx @eventcatalog/fieldtrip --dir ./schemas">
+        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+      </button>
+    </div>
+    <p class="hero-oss">Open source &middot; MIT License</p>
+
+    <div class="hero-screenshot">
+      <img src="/images/matrix.png" alt="FieldTrip matrix view showing property coverage across schemas" />
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Features -->
+  <section class="section section-center" id="features">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Three ways to explore your schemas</h2>
+    <p class="section-desc">
+      Search by property name, see which schemas share the same fields, and visualize how everything connects.
+    </p>
+
+    <div class="features-stack">
+      <!-- Table: text left, image right -->
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-card-icon" style="background: rgba(59,130,246,0.12);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+            </svg>
+          </div>
+          <h3>Table View</h3>
+          <p>Full-text search across property names, types, and descriptions. Filter by schema type, sort columns, and click any row to view the source with syntax highlighting.</p>
+        </div>
+        <div class="feature-img">
+          <img src="/images/table.png" alt="Table view showing schema properties" />
+        </div>
+      </div>
+
+      <!-- Matrix: image left, text right -->
+      <div class="feature-row feature-row-reverse">
+        <div class="feature-text">
+          <div class="feature-card-icon" style="background: rgba(139,92,246,0.12);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round">
+              <rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/>
+              <rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/>
+              <rect x="10" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/>
+              <rect x="17" y="17" width="4" height="4"/>
+            </svg>
+          </div>
+          <h3>Property Matrix</h3>
+          <p>A heatmap-style grid showing which properties appear in which schemas. Green for required, blue for optional. Instantly spot shared fields across your architecture.</p>
+        </div>
+        <div class="feature-img">
+          <img src="/images/matrix.png" alt="Matrix view showing property coverage" />
+        </div>
+      </div>
+
+      <!-- Graph: text left, image right -->
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-card-icon" style="background: rgba(16,185,129,0.12);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round">
+              <circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/>
+              <line x1="7" y1="6" x2="17" y2="6"/><line x1="6" y1="8" x2="11" y2="16"/>
+              <line x1="18" y1="8" x2="13" y2="16"/>
+            </svg>
+          </div>
+          <h3>Force-Directed Graph</h3>
+          <p>Visualize how schemas connect through shared properties. Click any node to highlight relationships. Drag, zoom, and explore the architecture.</p>
+        </div>
+        <div class="feature-img">
+          <img src="/images/graph.png" alt="Graph view showing schema relationships" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Schemas -->
+  <section class="section section-center" id="schemas">
+    <div class="section-label">Supported Formats</div>
+    <h2 class="section-title">Works with what you already have</h2>
+    <p class="section-desc">
+      FieldTrip auto-detects schema types from file extensions and content. No configuration needed.
+    </p>
+
+    <div class="schemas-grid">
+      <div class="schema-chip">
+        <span class="chip-dot" style="background: #3b82f6;"></span>
+        OpenAPI
+      </div>
+      <div class="schema-chip">
+        <span class="chip-dot" style="background: #8b5cf6;"></span>
+        AsyncAPI
+      </div>
+      <div class="schema-chip">
+        <span class="chip-dot" style="background: #10b981;"></span>
+        Protobuf
+      </div>
+      <div class="schema-chip">
+        <span class="chip-dot" style="background: #f59e0b;"></span>
+        Avro
+      </div>
+      <div class="schema-chip">
+        <span class="chip-dot" style="background: #6366f1;"></span>
+        JSON Schema
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- How It Works -->
+  <section class="section section-center" id="how">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">One command. Zero config.</h2>
+    <p class="section-desc">
+      FieldTrip scans, parses, indexes, and serves — all locally, in seconds.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">Step 1</div>
+        <h3>Scan</h3>
+        <p>Recursively finds schema files by extension and content detection in your directory.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">Step 2</div>
+        <h3>Parse</h3>
+        <p>Extracts every property with its name, type, description, path, and required status.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">Step 3</div>
+        <h3>Index</h3>
+        <p>Builds an index with prefix matching and fuzzy search.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">Step 4</div>
+        <h3>Serve</h3>
+        <p>Opens a local web UI with table, matrix, and graph views to explore everything.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Start exploring your schemas</h2>
+    <p>FieldTrip is free, open source, and runs entirely on your machine. Nothing is uploaded anywhere.</p>
+    <div class="install-block" id="cta-install">
+      <span>$</span>
+      <code>npx @eventcatalog/fieldtrip --dir ./schemas</code>
+      <button class="copy-btn" aria-label="Copy to clipboard" data-copy="npx @eventcatalog/fieldtrip --dir ./schemas">
+        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/eventcatalog/fieldtrip">GitHub</a>
+      <a href="https://www.npmjs.com/package/@eventcatalog/fieldtrip">npm</a>
+      <a href="https://eventcatalog.dev">EventCatalog</a>
+    </div>
+    <p>MIT License &middot; Built by <a href="https://eventcatalog.dev">EventCatalog</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const text = (btn as HTMLElement).dataset.copy || '';
+        await navigator.clipboard.writeText(text);
+        btn.classList.add('copied');
+        setTimeout(() => btn.classList.remove('copied'), 2000);
+      });
+    });
+
+    document.querySelectorAll('.install-block').forEach(block => {
+      block.addEventListener('click', () => {
+        const btn = block.querySelector('.copy-btn') as HTMLElement;
+        if (btn) btn.click();
+      });
+    });
+  </script>
+
+</Layout>
