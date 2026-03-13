@@ -7,7 +7,7 @@
 Point it at a directory. It finds your OpenAPI, AsyncAPI, Protobuf, Avro, and JSON Schema files, indexes every property, and launches a local UI to explore them.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/fieldtrip.svg)](https://www.npmjs.com/package/fieldtrip)
+[![npm version](https://img.shields.io/npm/v/@eventcatalog/fieldtrip.svg)](https://www.npmjs.com/package/@eventcatalog/fieldtrip)
 
 </div>
 
@@ -28,7 +28,7 @@ FieldTrip answers these in seconds. One command, zero config.
 ## Quick Start
 
 ```bash
-npx fieldtrip --dir ./schemas
+npx @eventcatalog/fieldtrip --dir ./schemas
 ```
 
 That's it. FieldTrip scans the directory, indexes every property, and opens a local UI at `http://localhost:3200`.
